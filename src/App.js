@@ -1,27 +1,34 @@
 import React from "react";
-import {Route, Switch, Redirect, BrowserRouter} from "react-router-dom";
+import {Switch, Redirect, BrowserRouter} from "react-router-dom";
 import Home from "./components/Home";
-import Navbar from "./components/Navbar/Navbar";
+import Login from "./components/Login";
+import Applications from "./components/Applications";
 import { ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import theme from './theme';
-import Container from "@material-ui/core/Container";
 import './App.css';
-import Paper from "@material-ui/core/Paper";
+import Profile from "./components/Profile";
+import EmptyLayoutRoute from "./components/Layout/EmptyLayoutRoute";
+import MainLayout from "./components/Layout/MainLayout";
+import PrivateRoute from "./components/Layout/PrivateRoute";
+import Persons from "./components/Persons";
 
 export default function App() {
     return (
         <ThemeProvider theme={theme}>
             <CssBaseline />
             <BrowserRouter>
-                <Navbar/>
+                <Switch>
+                    <EmptyLayoutRoute exact path="/login" component={Login} />
 
-                <Container className="container" maxWidth="lg">
-                    <Switch>
-                        <Route path="/home" component={Home} />
-                        <Route path='/' render={() => <Redirect to= "/home" />} />
-                    </Switch>
-                </Container>
+                    <MainLayout>
+                        <PrivateRoute exact path="/home" component={Home} />
+                        <PrivateRoute exact path="/apps" component={Applications} />
+                        <PrivateRoute exact path="/profile" component={Profile} />
+                        <PrivateRoute exact path="/persons" component={Persons} />
+                        <PrivateRoute exact path='/' render={() => <Redirect to= "/home" />} />
+                    </MainLayout>
+                </Switch>
             </BrowserRouter>
         </ThemeProvider>
 
