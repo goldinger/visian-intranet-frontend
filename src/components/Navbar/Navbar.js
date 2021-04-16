@@ -15,7 +15,7 @@ import {logOut} from "../../service/Authentication";
 
 const useStyles = makeStyles((theme) => ({
     grow: {
-        flex: "1 1 80px",
+        flex: "1 0 80px"
     },
     menuButton: {
         marginRight: theme.spacing(2),
@@ -134,7 +134,7 @@ export default function PrimarySearchAppBar() {
 
     return (
         <div className={classes.grow}>
-            <AppBar position="static">
+            <AppBar position="fixed">
                 <Toolbar>
                     <NavLink to='/'>
                         <Button color="inherit"><img className={classes.logo} alt="Visian-logo" src={logo} /></Button>

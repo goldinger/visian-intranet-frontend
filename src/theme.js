@@ -1,4 +1,5 @@
 import { createMuiTheme }  from '@material-ui/core/styles';
+import {frFR} from "@material-ui/core/locale";
 
 const theme = createMuiTheme({
     palette: {
@@ -10,7 +11,7 @@ const theme = createMuiTheme({
             default: "#ededed"
         }
     },
-
+    frFR
 });
 
 export default theme;
