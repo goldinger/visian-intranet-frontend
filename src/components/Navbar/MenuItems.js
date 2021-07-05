@@ -10,7 +10,7 @@ export const MenuItems = [
         iconComponent: <HomeIcon />,
     },
     {
-        title: "Home",
+        title: "Annuaire",
         path: "/persons",
         iconComponent: <MenuBookIcon />,
     },

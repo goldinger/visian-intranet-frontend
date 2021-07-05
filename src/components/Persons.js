@@ -133,7 +133,7 @@ export default class Persons extends React.Component {
     render() {
         const width = this.state.columns.reduce((a, v) => a + v.width, 0);
         return (
-            <Paper style={{marginBottom: "60px", width: width+20}}>
+            <Paper style={{marginTop: "40px", marginBottom: "60px", width: width+20}}>
                 <SearchBar
                     onChange={(value) => this.setState({search: value}, this.search)}
                     onCancelSearch={() => this.setState({search: ""}, this.search)}
