@@ -15,7 +15,7 @@ import {logOut} from "../../service/Authentication";
 
 const useStyles = makeStyles((theme) => ({
     grow: {
-        flex: "1 0 80px"
+        flex: "1 1 80px"
     },
     menuButton: {
         marginRight: theme.spacing(2),
